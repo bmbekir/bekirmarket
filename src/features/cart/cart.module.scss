@@ -1,0 +1,90 @@
+@import "../../sass/variables.scss";
+
+.cart-menu {
+  width: 100%;
+  font-size: 14px;
+  border: 8px $line-color solid;
+  padding: 26.57px 24.5px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  > ul.cart-items {
+    padding: 0;
+    display: block;
+    border: $background-color;
+    background-color: $background-color;
+    border-radius: 2px;
+    box-sizing: border-box;
+    li.cart-item {
+      box-sizing: border-box;
+      width: 231px;
+      list-style: none;
+      display: inline-block;
+      width: 100%;
+      > .cart-item-left {
+        float: left;
+        .cart-item-title {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.16px;
+        }
+        .cart-item-price {
+          color: $text-color-2;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.16px;
+
+          color: #1ea4ce;
+        }
+      }
+      > .cart-item-right {
+        float: right;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: right;
+        > .cart-item-count {
+          margin: 0 11px;
+          padding: 6px;
+          display: inline-block;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          background-color: $line-color;
+          color: $background-color;
+        }
+        a.cart-item-button,
+        a.cart-item-button:hover,
+        a.cart-item-button:active,
+        a.cart-item-button:visited {
+          text-decoration: none;
+        }
+        > a.cart-item-button {
+          img {
+            user-select: none;
+            width: 10px;
+          }
+        }
+      }
+    }
+  }
+  > .cart-menu-bottom {
+    width: 100%;
+    display: inline-block;
+    > .cart-menu-total {
+      float: right;
+      border: 2px solid $line-color;
+      box-sizing: border-box;
+      border-radius: 2px;
+      text-align: center;
+      width: 92px;
+      height: 51px;
+      line-height: 51px;
+      color: $text-color-1;
+    }
+  }
+}
