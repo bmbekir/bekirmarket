@@ -4,9 +4,11 @@ import "./sass/fonts.css";
 import { Cart } from "./features/cart/cart";
 import RadioList from "./plugins/radioList";
 import CheckboxList from "./plugins/checkboxList";
+import TypeSelector from "./plugins/typeSelector";
 
 function App() {
   const [radioTest, setRadioTest] = useState(0);
+  const [typeTest, setTypeTest] = useState("mug");
   const [checkTest, setCheckTest] = useState([] as any[]);
   return (
     <div className="App">
@@ -35,6 +37,16 @@ function App() {
               { label: "item 3", value: "3", extra: "asd" },
             ]}
           />
+          <div style={{ width: "129px" }}>
+            <TypeSelector
+              onChange={(value) => setTypeTest(value)}
+              selectdeValue={typeTest}
+              items={[
+                { label: "mug", value: "mug" },
+                { label: "shirt", value: "shirt" },
+              ]}
+            />
+          </div>
         </div>
       </header>
     </div>

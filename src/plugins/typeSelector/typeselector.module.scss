@@ -1,0 +1,40 @@
+@import "../../sass/variables.scss";
+ul.type-selector {
+  display: inline-grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  width: 100%;
+  padding: 0;
+  > li {
+    list-style: none;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin: 0 4px;
+    background-color: $type-back-color;
+
+    > a,
+    > a:active,
+    > a:visited,
+    > a:hover {
+      text-decoration: none;
+      color: $type-text-color;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+    }
+    > a {
+      display: block;
+    }
+  }
+  > li.selected {
+    background-color: $type-selected-back-color;
+    > a,
+    > a:active,
+    > a:visited,
+    > a:hover {
+      color: $type-selected-text-color;
+    }
+  }
+}

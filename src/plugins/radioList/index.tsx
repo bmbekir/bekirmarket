@@ -24,7 +24,9 @@ export default ({
               value={item.value}
               label={item.label}
               checked={item.value === checkedValue}
-              onClick={(value) => onChange(value, index)}
+              onClick={(value) =>
+                value !== checkedValue ? onChange(value, index) : undefined
+              }
             />
           </li>
         );
