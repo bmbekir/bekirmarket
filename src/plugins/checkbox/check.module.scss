@@ -1,3 +1,4 @@
+@import "../../sass/variables.scss";
 .check-row {
   > * {
     cursor: pointer;
@@ -12,9 +13,13 @@
     padding-right: 14px;
   }
   > label {
+    color: $label-color;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.16px;
+    > span.label-extra {
+      color: $label-extra-color;
+    }
   }
 }

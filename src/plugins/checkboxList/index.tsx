@@ -3,6 +3,7 @@ import styles from "./checkboxlist.module.scss";
 interface CheckListItem {
   value: any;
   label: string;
+  extra?: string;
 }
 interface CheckListProps {
   items: CheckListItem[];
@@ -31,6 +32,7 @@ export default ({
             <CheckBox
               value={item.value}
               label={item.label}
+              extra={item.extra}
               checked={checkedValues.indexOf(item.value) >= 0}
               onClick={(value) =>
                 onChange(checkItem(checkedValues, value), index)

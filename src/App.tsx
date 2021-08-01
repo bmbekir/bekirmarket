@@ -32,7 +32,7 @@ function App() {
             items={[
               { label: "item 1", value: "1" },
               { label: "item 2", value: "2" },
-              { label: "item 3", value: "3" },
+              { label: "item 3", value: "3", extra: "asd" },
             ]}
           />
         </div>
