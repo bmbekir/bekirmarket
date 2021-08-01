@@ -1,3 +1,4 @@
+@import "../../sass/variables.scss";
 .radio-row {
   > * {
     cursor: pointer;
@@ -10,6 +11,7 @@
     margin-right: 12px;
   }
   > label {
+    color: $label-color;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
