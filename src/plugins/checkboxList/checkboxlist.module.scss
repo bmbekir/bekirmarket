@@ -1,0 +1,14 @@
+ul.check-list {
+  padding: 24px;
+  margin: 0;
+  > li {
+    padding: 8px 0;
+    list-style: none;
+  }
+  li:first-child {
+    padding-top: 0;
+  }
+  li:last-child {
+    padding-bottom: 0;
+  }
+}

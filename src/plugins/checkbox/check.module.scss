@@ -1,4 +1,4 @@
-.radio-row {
+.check-row {
   > * {
     cursor: pointer;
   }
@@ -7,7 +7,9 @@
     width: 22px;
     height: 22px;
     vertical-align: middle;
-    margin-right: 12px;
+    zoom: 1.64;
+    margin: -7px;
+    padding-right: 14px;
   }
   > label {
     font-size: 14px;
