@@ -1,0 +1,12 @@
+.radio-row {
+  > * {
+    cursor: pointer;
+  }
+  > img {
+    user-select: none;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+}
