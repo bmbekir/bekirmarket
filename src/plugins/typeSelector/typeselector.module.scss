@@ -6,11 +6,13 @@ ul.type-selector {
   width: 100%;
   padding: 0;
   > li {
+    padding: 0;
+    margin: 0;
     list-style: none;
-    padding: 6px 16px;
     border-radius: 2px;
     margin: 0 4px;
     background-color: $type-back-color;
+    transition: background-color 0.8s ease;
 
     > a,
     > a:active,
@@ -25,7 +27,10 @@ ul.type-selector {
       text-align: center;
     }
     > a {
+      padding: 6px 16px;
       display: block;
+      user-select: none;
+      transition: color 1s ease;
     }
   }
   > li.selected {
