@@ -5,6 +5,7 @@ import { Cart } from "./features/cart/cart";
 import RadioList from "./plugins/radioList";
 import CheckboxList from "./plugins/checkboxList";
 import TypeSelector from "./plugins/typeSelector";
+import Navbar from "./layout/navbar/navbar";
 
 function App() {
   const [radioTest, setRadioTest] = useState(0);
@@ -13,9 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div style={{ width: "296px" }}>
-          <Cart />
-        </div>
+        {/*
         <div>
           <RadioList
             checkedValue={radioTest}
@@ -27,7 +26,7 @@ function App() {
             ]}
           />
         </div>
-        <div>
+          <div>
           <CheckboxList
             checkedValues={checkTest}
             onChange={(values, index) => setCheckTest(values)}
@@ -47,7 +46,8 @@ function App() {
               ]}
             />
           </div>
-        </div>
+        </div> */}
+        <Navbar />
       </header>
     </div>
   );

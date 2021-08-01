@@ -1,0 +1,30 @@
+@import "../../sass/variables.scss";
+.cart-menu {
+  background-color: $cart-menu-background-color;
+  color: $cart-menu-text-color;
+  width: 129px;
+  height: $menu-height;
+  position: relative;
+  > .card-menu-content {
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    display: flex;
+    > img {
+      width: 24px;
+      height: 24px;
+      float: left;
+      vertical-align: middle;
+    }
+    > span.cart-menu-price {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      margin: 3px 8px;
+      display: block;
+      float: right;
+    }
+  }
+}

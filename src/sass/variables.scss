@@ -1,9 +1,11 @@
+// colors
 $color-1: #1ea4ce;
-$color-2: #fff;
+$color-2: #ffffff;
 $color-3: #191919;
 $color-4: #525252;
 $color-5: #a8a8a8;
 $color-6: #f2f0fd;
+$color-7: #147594;
 $line-color: $color-1;
 $text-color-1: $color-1;
 $text-color-2: $color-3;
@@ -14,3 +16,11 @@ $type-back-color: $color-6;
 $type-text-color: $color-1;
 $type-selected-back-color: $color-1;
 $type-selected-text-color: $color-6;
+$navbar-background-color: $color-1;
+$hamburger-color: $color-6;
+$cart-menu-background-color: $color-7;
+$cart-menu-text-color: $color-2;
+
+// sizes
+$max-width: 1232px;
+$menu-height: 76.64px;
