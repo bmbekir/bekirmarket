@@ -6,9 +6,7 @@ export default () => {
   return (
     <div className={styles["navbar"]}>
       <div className={styles["navbar-content"]}>
-        <div className={styles["left"]}>
-          <HamburgerMenuButton />
-        </div>
+        <div className={styles["left"]}></div>
         <div className={styles["logo"]}>
           <img src={logoImg} />
         </div>
