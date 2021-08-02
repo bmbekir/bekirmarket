@@ -1,3 +1,7 @@
+@import "./variables.scss";
+body {
+  background-color: $page-bacgrpound-color;
+}
 * {
   font-family: "Open Sans";
 }

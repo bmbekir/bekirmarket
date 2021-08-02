@@ -6,6 +6,7 @@ import RadioList from "./plugins/radioList";
 import CheckboxList from "./plugins/checkboxList";
 import TypeSelector from "./plugins/typeSelector";
 import Navbar from "./layout/navbar/navbar";
+import LeftBox from "./plugins/leftbox";
 
 function App() {
   const [radioTest, setRadioTest] = useState(0);
@@ -15,17 +16,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/*
-        <div>
-          <RadioList
-            checkedValue={radioTest}
-            onChange={(value, index) => setRadioTest(value)}
-            items={[
-              { label: "item 1", value: "1" },
-              { label: "item 2", value: "2" },
-              { label: "item 3", value: "3" },
-            ]}
-          />
-        </div>
           <div>
           <CheckboxList
             checkedValues={checkTest}
@@ -49,6 +39,19 @@ function App() {
         </div> */}
         <Navbar />
       </header>
+      <div style={{ width: "296px", marginLeft: "30px" }}>
+        <LeftBox title="Sorting">
+          <RadioList
+            checkedValue={radioTest}
+            onChange={(value, index) => setRadioTest(value)}
+            items={[
+              { label: "item 1", value: "1" },
+              { label: "item 2", value: "2" },
+              { label: "item 3", value: "3" },
+            ]}
+          />
+        </LeftBox>
+      </div>
     </div>
   );
 }

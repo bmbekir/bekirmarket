@@ -1,0 +1,17 @@
+@import "../../sass/variables.scss";
+.left-box {
+  width: 100%;
+  > .left-box-title {
+    width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: $filter-title-color;
+  }
+  > .left-box-content {
+    width: 100%;
+    margin-top: 12px;
+    background-color: $background-color;
+  }
+}
