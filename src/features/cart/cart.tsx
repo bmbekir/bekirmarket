@@ -1,7 +1,7 @@
+import styles from "./cart.module.scss";
 import { Product } from "../../apiModels/product";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { add, decrase, getAmount, getProducts, incrase } from "./cartSlice";
-import styles from "./cart.module.scss";
 import classNames from "classnames";
 import minusImg from "./minus.svg";
 import plusImg from "./plus.svg";
