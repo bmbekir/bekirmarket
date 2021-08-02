@@ -73,17 +73,19 @@ export default ({
             </>
           );
         })}
-        <li className={styles["image-page-button"]}>
-          <a
-            href="#"
-            onClick={(ev) => {
-              ev.preventDefault();
-              onPageChange(page + 1);
-            }}
-          >
-            Next <img src={nextImg} />
-          </a>
-        </li>
+        {page != pageCount ? (
+          <li className={styles["image-page-button"]}>
+            <a
+              href="#"
+              onClick={(ev) => {
+                ev.preventDefault();
+                onPageChange(page + 1);
+              }}
+            >
+              Next <img src={nextImg} />
+            </a>
+          </li>
+        ) : undefined}
       </ul>
     </div>
   );
