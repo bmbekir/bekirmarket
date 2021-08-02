@@ -12,6 +12,7 @@ export interface BrandItem {
 export default interface ProductResult {
   products: Product[];
   pageCount: number;
+  totalCount: number;
   tags: TagItem[];
   brands: BrandItem[];
 }

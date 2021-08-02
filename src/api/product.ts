@@ -76,6 +76,7 @@ export default function getProducts(filter: ProductFilter): ProductResult {
   return {
     brands,
     tags,
+    totalCount,
     pageCount:
       Math.floor(totalCount / filter.pageSize) +
       (totalCount % filter.pageSize == 0 ? 0 : 1),

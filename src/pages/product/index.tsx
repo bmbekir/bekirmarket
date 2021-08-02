@@ -50,8 +50,6 @@ const ProductPage: React.FC<any> = () => {
       {" "}
       <Layout>
         <PageLeft>
-          <div>Brand Count:{result.brands.length}</div>
-          <div>Tag Count:{result.tags.length}</div>
           <LeftBox title="Sorting">
             <RadioList
               checkedValue={filter.sortType}
@@ -61,6 +59,10 @@ const ProductPage: React.FC<any> = () => {
           </LeftBox>
           <LeftBox title="Brands">
             <CheckboxList
+              search
+              placeholder="Search brand"
+              all="*"
+              allExtra={`(${result.totalCount})`}
               checkedValues={filter.brands}
               onChange={(value) => dispatch(setBrands(value))}
               items={result.brands.map((item) => ({
@@ -72,6 +74,10 @@ const ProductPage: React.FC<any> = () => {
           </LeftBox>
           <LeftBox title="Tags">
             <CheckboxList
+              search
+              placeholder="Search tag"
+              all="*"
+              allExtra={`(${result.totalCount})`}
               checkedValues={filter.tags}
               onChange={(value) => dispatch(setTags(value))}
               items={result.tags.map((item) => ({
