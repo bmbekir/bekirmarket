@@ -19,12 +19,14 @@ import { useDispatch } from "react-redux";
 import {
   getFilter,
   setBrands,
+  setPage,
   setSortType,
   setTags,
   setType,
 } from "./filterSlice";
 import { useAppSelector } from "../../app/hooks";
 import CheckboxList from "../../plugins/checkboxList";
+import Pagination from "../../plugins/pagination";
 
 const p: Product = {
   tags: ["Trees"],
@@ -109,6 +111,14 @@ const ProductPage: React.FC<any> = () => {
               />
             </div>
           </ProductList>
+          <Pagination
+            page={filter.page}
+            pageCount={result.pageCount}
+            onPageChange={(page) => {
+              window.scroll({ top: 0, left: 0 });
+              dispatch(setPage(page));
+            }}
+          />
         </PageCenter>
         <PageRight>
           <Cart />
