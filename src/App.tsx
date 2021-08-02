@@ -9,7 +9,19 @@ import Navbar from "./layout/navbar/navbar";
 import LeftBox from "./plugins/leftbox";
 import Layout, { PageCenter, PageLeft, PageRight } from "./layout/structure";
 import Bottom from "./layout/bottom/bottom";
-
+import ProductComp from "./plugins/product";
+import { Product } from "./apiModels/product";
+const p: Product = {
+  tags: ["Trees"],
+  price: 1,
+  name: "Handcrafted Trees Mug",
+  description:
+    "enim corporis voluptatibus laudantium possimus alias dolorem voluptatem similique aut aliquam voluptatem voluptatem omnis id consequatur",
+  slug: "Handcrafted-Trees-Mug",
+  added: 1485723766805,
+  manufacturer: "OHara-Group",
+  itemType: "mug",
+};
 function App() {
   const [radioTest, setRadioTest] = useState(0);
   const [typeTest, setTypeTest] = useState("mug");
@@ -47,7 +59,7 @@ function App() {
           </LeftBox>
         </PageLeft>
         <PageCenter>
-          <div style={{ width: "129px" }}>
+          {/* <div style={{ width: "129px" }}>
             <TypeSelector
               onChange={(value) => setTypeTest(value)}
               selectdeValue={typeTest}
@@ -56,6 +68,19 @@ function App() {
                 { label: "shirt", value: "shirt" },
               ]}
             />
+          </div> */}
+          <div
+            style={{
+              width: "100%",
+              height: "1000px",
+              padding: "20px",
+              boxSizing: "border-box",
+              backgroundColor: "white",
+            }}
+          >
+            <div style={{ width: "124px" }}>
+              <ProductComp product={p} />
+            </div>
           </div>
         </PageCenter>
         <PageRight>
