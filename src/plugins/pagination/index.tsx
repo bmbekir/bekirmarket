@@ -1,6 +1,7 @@
 import styles from "./pagination.module.scss";
 import prevImg from "./prev.svg";
 import nextImg from "./next.svg";
+import { Fragment } from "react";
 interface PaginationProps {
   pageCount: number;
   page: number;
@@ -52,7 +53,7 @@ export default ({
         ) : undefined}
         {pages.map((item, index) => {
           return (
-            <>
+            <Fragment key={index}>
               {index > 0 && pages[index - 1] - item < -1 ? (
                 <li className={styles["ellips"]}>...</li>
               ) : undefined}
@@ -70,7 +71,7 @@ export default ({
                   {item}
                 </a>
               </li>
-            </>
+            </Fragment>
           );
         })}
         {page != pageCount ? (
