@@ -7,6 +7,9 @@ export enum SortType {
 
 export default interface ProductFilter {
   sortType: SortType;
-  brands: string;
-  tags: string;
+  type: string;
+  brands: string[];
+  tags: string[];
+  pageSize: number;
+  page: number;
 }

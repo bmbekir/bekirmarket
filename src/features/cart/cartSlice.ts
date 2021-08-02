@@ -9,46 +9,6 @@ export interface CartState {
 const initialState: CartState = {
   items: [],
 };
-///
-const p1: Product = {
-  tags: ["Trees"],
-  price: 1,
-  name: "Handcrafted Trees Mug",
-  description:
-    "enim corporis voluptatibus laudantium possimus alias dolorem voluptatem similique aut aliquam voluptatem voluptatem omnis id consequatur",
-  slug: "Handcrafted-Trees-Mug",
-  added: 1485723766805,
-  manufacturer: "OHara-Group",
-  itemType: "mug",
-};
-const p2: Product = {
-  tags: ["Beach", "Ocean", "Water"],
-  price: 10,
-  name: "Rustic Beach Mug",
-  description:
-    "totam at veritatis eligendi assumenda ex quia praesentium quibusdam ducimus",
-  slug: "Rustic-Beach-Mug",
-  added: 1481573896833,
-  manufacturer: "Sipes-Inc",
-  itemType: "mug",
-};
-const p3: Product = {
-  tags: ["Desert", "People"],
-  price: 100,
-  name: "Practical People Shirt",
-  description:
-    "et repellat voluptatibus corrupti labore velit ut voluptatem sequi tenetur nulla nam incidunt et maiores impedit qui vel quos ut fugiat",
-  slug: "Practical-People-Shirt",
-  added: 1478785068028,
-  manufacturer: "Bernier-Hane",
-  itemType: "shirt",
-};
-
-initialState.items = addToCart(initialState.items, p1);
-initialState.items = addToCart(initialState.items, p2);
-initialState.items = addToCart(initialState.items, p3);
-initialState.items = addToCart(initialState.items, p3);
-///
 export const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,

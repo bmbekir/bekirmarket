@@ -8,6 +8,11 @@
   box-sizing: border-box;
   border-radius: 2px;
   background-color: $background-color;
+  > .empty-cart {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.3;
+  }
   > ul.cart-items {
     padding: 0;
     display: block;
@@ -28,6 +33,7 @@
           font-size: 14px;
           line-height: 18px;
           letter-spacing: 0.16px;
+          max-width: 150px;
         }
         .cart-item-price {
           color: $text-color-2;
