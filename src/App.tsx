@@ -11,6 +11,7 @@ import Layout, { PageCenter, PageLeft, PageRight } from "./layout/structure";
 import Bottom from "./layout/bottom/bottom";
 import ProductComp from "./plugins/product";
 import { Product } from "./apiModels/product";
+import ProductList from "./features/productlist/productlist";
 const p: Product = {
   tags: ["Trees"],
   price: 1,
@@ -59,29 +60,42 @@ function App() {
           </LeftBox>
         </PageLeft>
         <PageCenter>
-          {/* <div style={{ width: "129px" }}>
-            <TypeSelector
-              onChange={(value) => setTypeTest(value)}
-              selectdeValue={typeTest}
-              items={[
-                { label: "mug", value: "mug" },
-                { label: "shirt", value: "shirt" },
-              ]}
-            />
-          </div> */}
-          <div
-            style={{
-              width: "100%",
-              height: "1000px",
-              padding: "20px",
-              boxSizing: "border-box",
-              backgroundColor: "white",
-            }}
+          <ProductList
+            title="Products"
+            products={[
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+              p,
+            ]}
           >
-            <div style={{ width: "124px" }}>
-              <ProductComp product={p} />
+            <div style={{ width: "129px" }}>
+              <TypeSelector
+                onChange={(value) => setTypeTest(value)}
+                selectdeValue={typeTest}
+                items={[
+                  { label: "mug", value: "mug" },
+                  { label: "shirt", value: "shirt" },
+                ]}
+              />
             </div>
-          </div>
+          </ProductList>
         </PageCenter>
         <PageRight>
           <Cart />
