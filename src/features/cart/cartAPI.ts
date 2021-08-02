@@ -1,5 +1,5 @@
 import { CartProduct, Product } from "../../apiModels/product";
-
+//add item to cart
 export function addToCart(
   items: Array<CartProduct>,
   product: Product
@@ -13,6 +13,7 @@ export function addToCart(
   }
   return items;
 }
+//incrase item to cart
 
 export function incraseProduct(
   items: Array<CartProduct>,
@@ -24,6 +25,8 @@ export function incraseProduct(
   }
   return items;
 }
+
+//decrase item to cart
 export function decraseProduct(
   items: Array<CartProduct>,
   product: Product

@@ -26,12 +26,8 @@ const ProductList: React.FC<ProductListPros> = ({
         <ul className={styles["product-list-items"]}>
           {products.map((item, index) => {
             return (
-              <li>
-                <ProductComp
-                  key={index}
-                  product={item}
-                  onAdd={(p) => onAdd(p)}
-                />
+              <li key={index}>
+                <ProductComp product={item} onAdd={(p) => onAdd(p)} />
               </li>
             );
           })}

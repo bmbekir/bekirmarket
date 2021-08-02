@@ -12,7 +12,7 @@ const allTags = Array.from(
     }, [] as Array<string>)
   )
 );
-
+///get brands from All Products
 const allBrands = Array.from(
   new Set(
     products.reduce((arr, item) => {
@@ -43,9 +43,12 @@ export default function getProducts(filter: ProductFilter): ProductResult {
     .filter((item) => item.count > 0);
   const totalCount = results.length;
 
+  //all tags or all brans
+  //no tags selected no brand selected
   const hasAllBrands = filter.brands.length == 0 || filter.brands.includes("*");
   const hasAllTags = filter.tags.length == 0 || filter.brands.includes("*");
 
+  //tags and brands filter
   results = results.filter(
     (item) =>
       (hasAllBrands || filter.brands.includes(item.manufacturer)) &&
@@ -55,10 +58,13 @@ export default function getProducts(filter: ProductFilter): ProductResult {
           false as boolean
         ))
   );
+  //paginatiion
   results = results.slice(
     filter.pageSize * (filter.page - 1),
     filter.pageSize * filter.page
   );
+
+  //sort
   switch (filter.sortType) {
     case SortType.NewToOld:
       results = results.sort((item1, item2) => item1.added - item2.added);
