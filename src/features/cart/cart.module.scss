@@ -7,11 +7,11 @@
   padding: 26.57px 24.5px;
   box-sizing: border-box;
   border-radius: 2px;
+  background-color: $background-color;
   > ul.cart-items {
     padding: 0;
     display: block;
     border: $background-color;
-    background-color: $background-color;
     border-radius: 2px;
     box-sizing: border-box;
     li.cart-item {

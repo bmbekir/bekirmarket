@@ -1,0 +1,35 @@
+@import "../../sass/variables.scss";
+.bottom {
+  width: 100%;
+  > .bottom-content {
+    margin: auto;
+    max-width: $max-width;
+    margin-bottom: 40px;
+    > ul {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      > li {
+        list-style: none;
+        > a,
+        > a:visited,
+        > a:hover,
+        > a:active {
+          text-decoration: none;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 174%;
+          color: $text-color-1;
+        }
+      }
+      > li:not(:first-child)::before {
+        content: "•";
+        padding: 0 16px;
+        color: $text-color-1;
+      }
+    }
+  }
+}

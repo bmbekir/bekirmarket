@@ -7,6 +7,8 @@ import CheckboxList from "./plugins/checkboxList";
 import TypeSelector from "./plugins/typeSelector";
 import Navbar from "./layout/navbar/navbar";
 import LeftBox from "./plugins/leftbox";
+import Layout, { PageCenter, PageLeft, PageRight } from "./layout/structure";
+import Bottom from "./layout/bottom/bottom";
 
 function App() {
   const [radioTest, setRadioTest] = useState(0);
@@ -26,6 +28,25 @@ function App() {
               { label: "item 3", value: "3", extra: "asd" },
             ]}
           />
+         
+        </div> */}
+        <Navbar />
+      </header>
+      <Layout>
+        <PageLeft>
+          <LeftBox title="Sorting">
+            <RadioList
+              checkedValue={radioTest}
+              onChange={(value, index) => setRadioTest(value)}
+              items={[
+                { label: "item 1", value: "1" },
+                { label: "item 2", value: "2" },
+                { label: "item 3", value: "3" },
+              ]}
+            />
+          </LeftBox>
+        </PageLeft>
+        <PageCenter>
           <div style={{ width: "129px" }}>
             <TypeSelector
               onChange={(value) => setTypeTest(value)}
@@ -36,22 +57,12 @@ function App() {
               ]}
             />
           </div>
-        </div> */}
-        <Navbar />
-      </header>
-      <div style={{ width: "296px", marginLeft: "30px" }}>
-        <LeftBox title="Sorting">
-          <RadioList
-            checkedValue={radioTest}
-            onChange={(value, index) => setRadioTest(value)}
-            items={[
-              { label: "item 1", value: "1" },
-              { label: "item 2", value: "2" },
-              { label: "item 3", value: "3" },
-            ]}
-          />
-        </LeftBox>
-      </div>
+        </PageCenter>
+        <PageRight>
+          <Cart />
+        </PageRight>
+      </Layout>
+      <Bottom />
     </div>
   );
 }
