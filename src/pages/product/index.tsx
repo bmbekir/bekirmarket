@@ -13,9 +13,18 @@ import TypeSelector from "../../plugins/typeSelector";
 import ProductList from "../../plugins/productlist/productlist";
 import { Cart } from "../../features/cart/cart";
 import getProducts from "../../api/product";
-import { SortType } from "../../apiModels/productFilter";
+import { SortType, SortTypeNames } from "../../apiModels/productFilter";
 import { add } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import {
+  getFilter,
+  setBrands,
+  setSortType,
+  setTags,
+  setType,
+} from "./filterSlice";
+import { useAppSelector } from "../../app/hooks";
+import CheckboxList from "../../plugins/checkboxList";
 
 const p: Product = {
   tags: ["Trees"],
@@ -28,32 +37,49 @@ const p: Product = {
   manufacturer: "OHara-Group",
   itemType: "mug",
 };
-
+const sortTypes = Array.from(SortTypeNames).map((item) => ({
+  label: item[1],
+  value: item[0],
+}));
 const ProductPage: React.FC<any> = () => {
   const dispatch = useDispatch();
-  const result = getProducts({
-    brands: ["*"],
-    page: 1,
-    pageSize: 16,
-    sortType: SortType.PriceHighToLow,
-    tags: ["*"],
-    type: "shirt",
-  });
+  const filter = useAppSelector(getFilter);
+  const result = getProducts(filter);
   return (
     <div className={classNames(styles["page"], styles["product-page"])}>
       {" "}
       <Layout>
         <PageLeft>
+          <div>Brand Count:{result.brands.length}</div>
+          <div>Tag Count:{result.tags.length}</div>
           <LeftBox title="Sorting">
-            {/* <RadioList
-              checkedValue={radioTest}
-              onChange={(value, index) => setRadioTest(value)}
-              items={[
-                { label: "item 1", value: "1" },
-                { label: "item 2", value: "2" },
-                { label: "item 3", value: "3" },
-              ]}
-            /> */}
+            <RadioList
+              checkedValue={filter.sortType}
+              onChange={(value, index) => dispatch(setSortType(value))}
+              items={sortTypes}
+            />
+          </LeftBox>
+          <LeftBox title="Brands">
+            <CheckboxList
+              checkedValues={filter.brands}
+              onChange={(value) => dispatch(setBrands(value))}
+              items={result.brands.map((item) => ({
+                label: item.name.replaceAll("-", " ").replace(/\s/g, " "),
+                value: item.name,
+                extra: `(${item.count})`,
+              }))}
+            />
+          </LeftBox>
+          <LeftBox title="Tags">
+            <CheckboxList
+              checkedValues={filter.tags}
+              onChange={(value) => dispatch(setTags(value))}
+              items={result.tags.map((item) => ({
+                label: item.name,
+                value: item.name,
+                extra: `(${item.count})`,
+              }))}
+            />
           </LeftBox>
         </PageLeft>
         <PageCenter>
@@ -66,7 +92,10 @@ const ProductPage: React.FC<any> = () => {
           >
             <div style={{ width: "129px" }}>
               <TypeSelector
-                selectdeValue="shirt"
+                selectdeValue={filter.type}
+                onChange={(value) => {
+                  dispatch(setType(value));
+                }}
                 items={[
                   { label: "mug", value: "mug" },
                   { label: "shirt", value: "shirt" },

@@ -13,3 +13,9 @@ export default interface ProductFilter {
   pageSize: number;
   page: number;
 }
+export const SortTypeNames = new Map<number, string>([
+  [SortType.PriceLowToHigh, "Price low to high"],
+  [SortType.PriceHighToLow, "Price high to low"],
+  [SortType.NewToOld, "New to old"],
+  [SortType.OldToNew, "Old to new"],
+]);

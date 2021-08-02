@@ -29,18 +29,22 @@ const allBrands = Array.from(
  */
 export default function getProducts(filter: ProductFilter): ProductResult {
   let results = products.filter((item) => item.itemType == filter.type);
-  const tags: TagItem[] = allTags.map((item) => ({
-    count: results.filter((p) => p.tags.includes(item)).length,
-    name: item,
-  }));
-  const brands: BrandItem[] = allBrands.map((item) => ({
-    count: results.filter((p) => p.manufacturer === item).length,
-    name: item,
-  }));
+  const tags: TagItem[] = allTags
+    .map((item) => ({
+      count: results.filter((p) => p.tags.includes(item)).length,
+      name: item,
+    }))
+    .filter((item) => item.count > 0);
+  const brands: BrandItem[] = allBrands
+    .map((item) => ({
+      count: results.filter((p) => p.manufacturer === item).length,
+      name: item,
+    }))
+    .filter((item) => item.count > 0);
   const totalCount = results.length;
 
-  const hasAllBrands = filter.brands.includes("*");
-  const hasAllTags = filter.brands.includes("*");
+  const hasAllBrands = filter.brands.length == 0 || filter.brands.includes("*");
+  const hasAllTags = filter.tags.length == 0 || filter.brands.includes("*");
 
   results = results.filter(
     (item) =>
