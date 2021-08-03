@@ -58,11 +58,6 @@ export default function getProducts(filter: ProductFilter): ProductResult {
           false as boolean
         ))
   );
-  //paginatiion
-  results = results.slice(
-    filter.pageSize * (filter.page - 1),
-    filter.pageSize * filter.page
-  );
 
   //sort
   switch (filter.sortType) {
@@ -79,13 +74,20 @@ export default function getProducts(filter: ProductFilter): ProductResult {
       results = results.sort((item1, item2) => item1.price - item2.price);
       break;
   }
+  const itemCount = results.length;
+  //paginatiion
+  results = results.slice(
+    filter.pageSize * (filter.page - 1),
+    filter.pageSize * filter.page
+  );
+
   return {
     brands,
     tags,
     totalCount,
     pageCount:
-      Math.floor(totalCount / filter.pageSize) +
-      (totalCount % filter.pageSize == 0 ? 0 : 1),
+      Math.floor(itemCount / filter.pageSize) +
+      (itemCount % filter.pageSize == 0 ? 0 : 1),
     products: results,
   };
 }
